@@ -1,0 +1,15 @@
+{% if post_form.errors %}
+    <ul>
+    {% for error in post_form.errors.items() %}
+        <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<form action="/create_post" method="post">
+    <h2>Title</h2>
+    <p>{{ post_form.title }}</p>
+    <h3>Text</h3>
+    <p>{{ post_form.text }}</p>
+    <input type="submit" value="Ok">
+</form>
